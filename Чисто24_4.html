@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чисто24 - Професійне прибирання квартир</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4f0e2 100%);
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .input-focus:focus {
+            border-color: #48bb78;
+            box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.2);
+        }
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2f855a;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                    <i class="fas fa-broom text-green-600"></i>
+                </div>
+                <h1 class="text-xl font-bold text-gray-800">Чисто<span class="text-green-600">24</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#calculator" class="text-gray-600 hover:text-green-600 transition">Калькулятор</a>
+                <a href="#booking" class="text-gray-600 hover:text-green-600 transition">Бронювання</a>
+                <a href="#contacts" class="text-gray-600 hover:text-green-600 transition">Контакти</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Чисто<span class="text-green-600">24</span></h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">Прибирання, якого ви заслуговуєте</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#calculator" class="btn-primary bg-green-600 text-white px-8 py-3 rounded-lg font-medium inline-block">Розрахувати вартість</a>
+                <a href="#booking" class="bg-white text-green-600 border border-green-600 px-8 py-3 rounded-lg font-medium inline-block">Забронювати зараз</a>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">Про компанію Чисто<span class="text-green-600">24</span></h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="bg-gray-100 rounded-xl p-6 shadow-sm">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-calendar-check text-green-600"></i>
+                                    </div>
+                                    <span>Працюємо з 2020 року</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-users text-green-600"></i>
+                                    </div>
+                                    <span>У команді 12 професійних клінерів</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-green-600"></i>
+                                    </div>
+                                    <span>Обслуговуємо Львів та область</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-home text-green-600"></i>
+                                    </div>
+                                    <span>Прибираємо квартири, офіси, будинки, після ремонту</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-leaf text-green-600"></i>
+                                    </div>
+                                    <span>Використовуємо екологічну хімію та сучасне обладнання</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-smile text-green-600"></i>
+                                    </div>
+                                    <span>Більше 400 задоволених клієнтів</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Клінер за роботою" 
+                                 class="w-full h-full object-cover rounded-xl"
+                                 loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Розрахуйте вартість прибирання</h2>
+            
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl p-8 shadow-sm">
+                <div class="grid md:grid-cols-2 gap-6">  
+
+                 <div class="relative">
+                    <label for="rooms" class="block text-gray-700 mb-2 pl-1">
+                      <i class="fas fa-home text-green-600 mr-2"></i> Кількість кімнат
+                    </label>
+                 <div class="relative">
+                   <i class="fas fa-home absolute left-3 top-3.5 text-gray-400"></i>
+                     <select id="rooms" class="w-full px-10 py-3 rounded-lg border border-gray-300 input-focus bg-white appearance-none">
+                     <option value="1">1 кімната</option>
+                     <option value="2">2 кімнати</option>
+                     <option value="3">3 кімнати</option>
+                     <option value="4">4 кімнати</option>
+                     <option value="5">5+ кімнат</option>
+                    </select>
+                  <i class="fas fa-chevron-down absolute right-3 top-3.5 text-gray-400 pointer-events-none"></i>
+                 </div>
+               </div>
+
+                    
+               <div class="relative">
+                <label class="block text-gray-700 mb-2 pl-9"><i class="fas fa-ruler-combined absolute left-0 top-1 text-green-600"></i> Площа квартири (м²)</label>
+                <input id="area" type="number" min="20" max="200" value="50" class="w-full px-12 py-3 rounded-lg border border-gray-300 input-focus bg-white">
+                <i class="fas fa-calculator absolute left-3 top-12 text-gray-400"></i>
+            </div>
+        </div>
+              
+              
+                
+                <div class="mt-8">
+                    <label class="block text-gray-700 mb-4 pl-1"><i class="fas fa-plus-circle text-green-600 mr-2"></i>Додаткові послуги</label>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200 hover:border-green-300 transition">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded focus:ring-green-500" data-price="300">
+                            <span class="text-gray-700 flex-1">Миття вікон</span>
+                            <span class="text-green-600 font-medium">+300 грн</span>
+                        </label>
+                        <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200 hover:border-green-300 transition">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded focus:ring-green-500" data-price="500">
+                            <span class="text-gray-700 flex-1">Хімчистка меблів</span>
+                            <span class="text-green-600 font-medium">+500 грн</span>
+                        </label>
+                        <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200 hover:border-green-300 transition">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded focus:ring-green-500" data-price="400">
+                            <span class="text-gray-700 flex-1">Прибирання балкону</span>
+                            <span class="text-green-600 font-medium">+400 грн</span>
+                        </label>
+                        <label class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200 hover:border-green-300 transition">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-green-600 rounded focus:ring-green-500" data-price="200">
+                            <span class="text-gray-700 flex-1">Прибирання холодильника</span>
+                            <span class="text-green-600 font-medium">+200 грн</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mt-10 text-center">
+                    <button id="calculate-btn" class="btn-primary bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-lg font-medium text-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-calculator mr-2"></i> Розрахувати вартість
+                    </button>
+                </div>
+                
+                <div id="result" class="mt-8 opacity-0 h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                    <div id="result-content">
+                        <div class="bg-white border border-green-200 rounded-xl p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold text-green-800 mb-3 flex items-center">
+                                <i class="fas fa-receipt mr-2 text-green-600"></i> Орієнтовна вартість
+                            </h3>
+                            <p class="text-4xl font-bold text-green-600 mb-4"><span id="total-price">0</span> грн</p>
+                            <div id="selected-services" class="text-gray-600 mb-6 text-left"></div>
+                            <p class="text-gray-500 text-sm mb-6">* Точну вартість уточнюйте у менеджера</p>
+                            <button id="booking-cta" class="w-full btn-primary bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors duration-300">
+                                <i class="far fa-calendar-check mr-2"></i> Забронювати з цією ціною
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Наші послуги</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Стандартне прибирання</h3>
+                    <p class="text-gray-600">Повне прибирання всіх кімнат, кухні, санвузла. Вимивання підлоги, пилосос, прибирання пилу.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-spray-can text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Генеральне прибирання</h3>
+                    <p class="text-gray-600">Глибоке прибирання з миттям вікон, меблів, техніки, усіх важкодоступних місць.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Щотижневе обслуговування</h3>
+                    <p class="text-gray-600">Регулярне підтримуюче прибирання за графіком, що заощадить ваш час і гроші.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking-form" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div id="booking-success" class="hidden text-center bg-white p-8 rounded-xl shadow-sm mb-8">
+                    <div class="flex justify-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-check-circle text-4xl text-green-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-green-600 mb-4">Замовлення успішно оформлене!</h3>
+                    <p class="text-gray-600 mb-6">Дякуємо за ваше замовлення. Наш менеджер зв'яжеться з вами найближчим часом для підтвердження.</p>
+                    <button id="new-order-btn" class="btn-primary bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Нове замовлення
+                    </button>
+                </div>
+
+                <form id="booking-form-content" class="bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 text-white">
+                        <h2 class="text-2xl font-bold flex items-center">
+                            <i class="far fa-calendar-alt mr-3"></i> Оформлення замовлення
+                        </h2>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="space-y-6">
+                            <div class="relative">
+                                <label for="name" class="block text-gray-700 mb-2 pl-1"><i class="fas fa-user text-green-600 mr-2"></i> Ім'я та прізвище</label>
+                                <div class="relative">
+                                    <input type="text" id="name" required class="w-full px-10 py-3 rounded-lg border border-gray-300 input-focus bg-gray-50" placeholder="Введіть ваше ім'я">
+                                    <i class="fas fa-user absolute left-3 top-3.5 text-gray-400"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <label for="phone" class="block text-gray-700 mb-2 pl-1"><i class="fas fa-phone text-green-600 mr-2"></i> Телефон</label>
+                                <div class="relative">
+                                    <input type="tel" id="phone" required class="w-full px-10 py-3 rounded-lg border border-gray-300 input-focus bg-gray-50" placeholder="+380 (__) ___-____">
+                                    <i class="fas fa-mobile-alt absolute left-3 top-3.5 text-gray-400"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="relative">
+                                <label for="address" class="block text-gray-700 mb-2 pl-1"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i> Адреса</label>
+                                <div class="relative">
+                                    <input type="text" id="address" required class="w-full px-10 py-3 rounded-lg border border-gray-300 input-focus bg-gray-50" placeholder="Введіть адресу прибирання">
+                                    <i class="fas fa-home absolute left-3 top-3.5 text-gray-400"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="relative">
+                                    <label for="date" class="block text-gray-700 mb-2 pl-1"><i class="far fa-calendar text-green-600 mr-2"></i> Дата</label>
+                                    <div class="relative">
+                                        <input type="date" id="date" required class="w-full px-10 py-3 rounded-lg border border-gray-300 input-focus bg-gray-50">
+                                        <i class="far fa-calendar absolute left-3 top-3.5 text-gray-400"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative">
+                                    <label for="time" class="block text-gray-700 mb-2 pl-1">
+                                      <i class="far fa-clock text-green-600 mr-2"></i> Час
+                                    </label>
+                                    <div class="relative">
+                                        <select id="time" class="w-full px-10 py-3 rounded-lg border border-gray-300 input-focus bg-gray-50 appearance-none">
+                                        <option value="08:00-10:00">08:00 - 10:00</option>
+                                        <option value="10:00-12:00">10:00 - 12:00</option>
+                                        <option value="12:00-14:00">12:00 - 14:00</option>
+                                        <option value="14:00-16:00">14:00 - 16:00</option>
+                                        <option value="16:00-18:00">16:00 - 18:00</option>
+                                      </select>
+                                      <i class="far fa-clock absolute left-3 top-3.5 text-gray-400"></i>
+                                    </div>
+                                  </div>
+                                  <!-- Full-width Обрані послуги -->
+                                   <div class="md:col-span-2">
+                                    <label for="services" class="block text-gray-700 mb-2 pl-1">
+                                        <i class="fas fa-clipboard-list text-green-600 mr-2"></i> Обрані послуги
+                                    </label>
+                                    <textarea id="services" readonly
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-100 text-gray-600"
+                                    rows="3" style="resize: none;"></textarea>
+                                </div>
+
+                                   <!-- Full-width Додаткові коментарі -->
+                                   <div class="md:col-span-2">
+                                    <label for="comments" class="block text-gray-700 mb-2 pl-1">
+                                        <i class="fas fa-comment text-green-600 mr-2"></i> Додаткові коментарі
+                                    </label>
+                                    <textarea id="comments"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-100 input-focus"
+                                    rows="3" placeholder="Ваші побажання чи особливості квартири"
+                                    style="resize: none;"></textarea>
+                                </div>
+
+                                
+                            
+                                    
+                        </div>
+                        
+                        <div class="mt-10">
+                            <button type="submit" id="submit-booking" class="w-full btn-primary bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium text-lg transition-colors duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i> Підтвердити бронювання
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Відгуки клієнтів</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Клієнт" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Олена Коваль</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Дуже задоволена сервісом! Клінери приїхали точно вчасно, прибрали все дуже якісно. Квартира сяє! Обов'язково скористаюся ще раз."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Клієнт" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ігор Петренко</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Замовляв генеральне прибирання після ремонту. Впоралися на відмінно! Всі будівельні сміття, пил, бруд - все прибрано. Рекомендую!"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Клієнт" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Наталія Сидоренко</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Користуюся послугами щотижня вже пів року. Дуже зручно, що можна вибрати час після роботи. Завжди чисто і приємно повертатися додому."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Наші контакти</h2>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Зв'яжіться з нами</h3>
+                    <p class="text-gray-600 mb-6">Ми завжди раді відповісти на ваші запитання та допомогти з бронюванням.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Телефон</p>
+                                <a href="tel:+380991234567" class="font-medium text-gray-800 hover:text-green-600">+38 (099) 123 45 67</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-paper-plane text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Telegram</p>
+                                <a href="https://t.me/chysto24" target="_blank" class="font-medium text-gray-800 hover:text-green-600">@chysto24</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fab fa-instagram text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Instagram</p>
+                                <a href="https://instagram.com/chysto24" target="_blank" class="font-medium text-gray-800 hover:text-green-600">@chysto24</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">Графік роботи</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-600">Понеділок - П'ятниця</span>
+                            <span class="font-medium">08:00 - 20:00</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-200 pb-2">
+                            <span class="text-gray-600">Субота</span>
+                            <span class="font-medium">09:00 - 18:00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Неділя</span>
+                            <span class="font-medium">10:00 - 16:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-3">Швидке бронювання</h4>
+                        <a href="https://t.me/chysto24" target="_blank" class="inline-flex items-center bg-blue-500 text-white px-4 py-2 rounded-lg">
+                            <i class="fab fa-telegram mr-2"></i>
+                            Написати в Telegram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center mr-3">
+                            <i class="fas fa-broom text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Чисто<span class="text-green-400">24</span></h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Професійний сервіс прибирання квартир у вашому місті.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Послуги</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Стандартне прибирання</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Генеральне прибирання</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Післяремонтне прибирання</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Щотижневе обслуговування</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Інформація</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Про компанію</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Вакансії</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Політика конфіденційності</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Договір оферти</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 Чисто24. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+<!-- Other content... -->
+
+<!-- Your script goes here -->
+<script>
+    const bookingForm = document.getElementById('booking-form');
+  
+    bookingForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const services = document.getElementById('services').value;
+      const comments = document.getElementById('comments').value;
+  
+      const scriptURL = "https://script.google.com/macros/s/AKfycbwYgjV6V8v8wUpmDRnYAM1fz6sikE2Up9n-ke_Wr0dD47Xgy5nUpf9tXpNTSLt0v7tV/exec";     // URL
+  
+      const formData = new URLSearchParams();
+      formData.append("name", name);
+      formData.append("phone", phone);
+      formData.append("date", date);
+      formData.append("time", time);
+      formData.append("services", services);
+      formData.append("comments", comments);
+  
+      fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        console.log("Calendar event added:", result);
+        alert("Бронювання додано до календаря!");
+      })
+      .catch(error => {
+        console.error("Помилка при додаванні до календаря:", error);
+        alert("Сталася помилка при збереженні до календаря.");
+      });
+    });
+  </script>
+  
+  </body>
+  </html>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Improved Calculator functionality
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resultDiv = document.getElementById('result');
+            const totalPriceSpan = document.getElementById('total-price');
+            const selectedServicesDiv = document.getElementById('selected-services');
+            const bookingCtaBtn = document.getElementById('booking-cta');
+            const bookingForm = document.getElementById('booking-form-content');
+            const bookingSuccess = document.getElementById('booking-success');
+            const newOrderBtn = document.getElementById('new-order-btn');
+            const servicesField = document.getElementById('services');
+            
+            // Generate summary of selected services
+            function getSelectedServices() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                if (checkboxes.length === 0) return "Базове прибирання";
+                
+                let services = [];
+                checkboxes.forEach(checkbox => {
+                    services.push(checkbox.parentElement.querySelector('span:not([class*=text-green])').textContent.trim());
+                });
+                return services.join(', ');
+            }
+            
+            // Calculate and show results
+            calculateBtn.addEventListener('click', function() {
+                // Base price calculation
+                const rooms = parseInt(document.getElementById('rooms').value);
+                const area = parseInt(document.getElementById('area').value);
+                
+                let basePrice = 0;
+                let roomText = "";
+                
+                if (rooms === 1) { basePrice = 800; roomText = "1 кімната"; }
+                else if (rooms === 2) { basePrice = 1200; roomText = "2 кімнати"; }
+                else if (rooms === 3) { basePrice = 1500; roomText = "3 кімнати"; }
+                else if (rooms === 4) { basePrice = 1800; roomText = "4 кімнати"; }
+                else { basePrice = 2000; roomText = "5+ кімнат"; }
+                
+                // Area adjustment
+                if (area > 60) basePrice += Math.floor((area - 60) / 10) * 200;
+                
+                // Additional services
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                let additionalPrice = 0;
+                
+                checkboxes.forEach(checkbox => {
+                    additionalPrice += parseInt(checkbox.dataset.price);
+                });
+                
+                // Total price
+                const totalPrice = basePrice + additionalPrice;
+                totalPriceSpan.textContent = totalPrice.toLocaleString('uk-UA');
+                
+                // Update services summary
+                const selectedServices = getSelectedServices();
+                selectedServicesDiv.innerHTML = `
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="mb-2">Ваш вибір:</p>
+                        <ul class="space-y-1 text-sm">
+                            <li class="flex justify-between"><span>${roomText}</span><span>${basePrice} грн</span></li>
+                            <li class="flex justify-between"><span>Площа: ${area} м²</span><span>+${Math.floor((area > 60 ? (area - 60) : 0)/10)*200} грн</span></li>
+                            ${checkboxes.length > 0 ? '<li class="border-t border-gray-200 mt-2 pt-2"><span>Додаткові послуги:</span></li>' : ''}
+                            ${Array.from(checkboxes).map(checkbox => `
+                                <li class="flex justify-between pl-2">
+                                    <span>${checkbox.parentElement.querySelector('span:not([class*=text-green])').textContent.trim()}</span>
+                                    <span>+${checkbox.dataset.price} грн</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+                
+                // Populate services field in booking form
+                servicesField.value = `Загальна вартість: ${totalPrice} грн\n\nВключено:\n- ${roomText}, ${area} м²${
+                    checkboxes.length > 0 ? '\n- Додатково: ' + selectedServices.replaceAll(', ', '\n- ') : ''
+                }`;
+                
+                // Show result with animation
+                resultDiv.style.opacity = 1;
+                resultDiv.style.height = 'auto';
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            
+            // Book with this price button
+            bookingCtaBtn.addEventListener('click', function() {
+                document.getElementById('booking-form').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Add slight delay for scroll to complete
+                setTimeout(() => {
+                    bookingForm.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                }, 500);
+            });
+            
+            // Form submission handling
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const name = document.getElementById('name').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const address = document.getElementById('address').value.trim();
+                    const date = document.getElementById('date').value;
+                    
+                    if (!name || !phone || !address || !date) {
+                        alert('Будь ласка, заповніть всі обов\'язкові поля');
+                        return;
+                    }
+                    
+                    // Here you would normally send the form data to your backend
+                    // For this example, we'll just show the success message
+                    //- Other content... -->
+
+                
+
+                    // Hide form and show success message
+                    bookingForm.style.opacity = 0;
+                    bookingForm.style.height = 0;
+                    bookingForm.style.overflow = 'hidden';
+                    bookingForm.style.marginBottom = 0;
+                    bookingSuccess.classList.remove('hidden');
+                    bookingSuccess.style.animation = 'fadeIn 0.5s ease-out forwards';
+                    
+                    // Play success animation
+                    const successIcon = bookingSuccess.querySelector('.fa-check-circle');
+                    successIcon.style.transition = 'all 0.3s ease-out';
+                    setTimeout(() => {
+                        successIcon.style.transform = 'scale(1.2)';
+                        setTimeout(() => {
+                            successIcon.style.transform = 'scale(1)';
+                        }, 300);
+                    }, 500);
+                });
+            }
+            
+            // New order button
+            newOrderBtn.addEventListener('click', function() {
+                bookingSuccess.style.animation = 'fadeOut 0.5s ease-out forwards';
+                setTimeout(() => {
+                    bookingSuccess.classList.add('hidden');
+                    bookingForm.style.opacity = 1;
+                    bookingForm.style.height = 'auto';
+                    bookingForm.style.overflow = 'visible';
+                    bookingForm.style.marginBottom = '2rem';
+                    bookingForm.style.animation = 'fadeIn 0.5s ease-out forwards';
+                    bookingForm.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+            });
+            
+            // Mobile menu toggle (placeholder)
+            const mobileMenuBtn = document.querySelector('.md\\:hidden');
+            mobileMenuBtn.addEventListener('click', function() {
+                alert('Мобільне меню буде реалізовано в майбутньому');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add animations to CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
